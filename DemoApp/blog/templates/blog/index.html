@@ -26,6 +26,7 @@
 						<th>Title</th>
 						<th>User</th>
 						<th>Timestamp</th>
+						<th colspan="2">Actions</th>
 					</thead>
 					<tbody class="tbody-light">
 						{% for post in posts %}
@@ -34,12 +35,20 @@
 								<td><a href="{% url 'blog:details' post.id %}">{{ post.title }}</a></td>
 								<td>{{ post.user.username }}</td>
 								<td>{{ post.created_at }}</td>
+								<td><a href="{% url 'blog:edit' post.id %}" class="btn btn-primary btn-sm">Edit</a></td>
+								<td><a href="{% url 'blog:delete' post.id %}" class="btn btn-danger btn-sm">Delete</a></td></td>
 							</tr>
 						{% endfor %}
 					</tbody>
 				</table>
 			</div>
 		</div>
+	</div>
+
+	<br>
+
+	<div class="text-center">
+		<a href="{% url 'blog:create' %}" class="btn btn-success">Add Post</a>
 	</div>
 
 {% endblock %}
