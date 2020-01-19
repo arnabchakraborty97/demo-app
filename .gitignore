@@ -1,1 +1,5 @@
+*.pyc
+*.pyo
 venv/*
+static/media/*
+static/static-only/*

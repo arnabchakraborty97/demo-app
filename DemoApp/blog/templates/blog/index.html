@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+	Posts
+{% endblock %}
+
+{% block stylesheets %}
+
+	<style type="text/css">
+		body {
+			background: url('https://designshack.net/wp-content/uploads/best-subtle-black-white-background-textures.jpg');
+		}
+	</style>
+
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="card">
+			<div class="card-header">Posts</div>
+			<div class="card-body">
+				<table class="table table-bordered">
+					<thead class="thead-dark">
+						<th>#</th>
+						<th>Title</th>
+						<th>User</th>
+						<th>Timestamp</th>
+					</thead>
+					<tbody class="tbody-light">
+						{% for post in posts %}
+							<tr>
+								<td>{{ post.id }}</td>
+								<td>{{ post.title }}</td>
+								<td>{{ post.user.username }}</td>
+								<td>{{ post.created_at }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
