@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+
+	Post Details
+
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="card">
+			<div class="card-header">Post Details</div>
+			<div class="card-body">
+				<table class="table table-bordered">
+					<tbody class="tbody-light">
+						<tr>
+							<th>#</th>
+							<td>{{ post.id }}</td>
+						</tr>
+						<tr>
+							<th>Title</th>
+							<td>{{ post.title }}</td>
+						</tr>
+						<tr>
+							<th>Content</th>
+							<td>{{ post.content|linebreaks }}</td>
+						</tr>
+						<tr>
+							<th>Timestamp</th>
+							<td>{{ post.created_at }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

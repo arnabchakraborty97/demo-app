@@ -8,8 +8,8 @@ urlpatterns = [
 	# /blog/
 	url(r'^$', views.index, name='index'),
 
-	# # /blog/3/
-	# url(r'^(?P<post_id>[0-9]+)/$', views.details, name='details'),
+	# /blog/3/
+	url(r'^(?P<post_id>[0-9]+)/$', views.details, name='details'),
 
 	# # /blog/create/
 	# url(r'^create/$', views.create, name='create'),

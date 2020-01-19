@@ -31,7 +31,7 @@
 						{% for post in posts %}
 							<tr>
 								<td>{{ post.id }}</td>
-								<td>{{ post.title }}</td>
+								<td><a href="{% url 'blog:details' post.id %}">{{ post.title }}</a></td>
 								<td>{{ post.user.username }}</td>
 								<td>{{ post.created_at }}</td>
 							</tr>

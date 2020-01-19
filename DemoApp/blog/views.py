@@ -7,8 +7,9 @@ def index(request):
 	return render(request, 'blog/index.html', {'posts': posts})
 
 
-def details(request):
-	pass
+def details(request, post_id):
+	post = Post.objects.get(pk=post_id)
+	return render(request, 'blog/details.html', {'post': post})
 
 
 def create(request):
